@@ -33,6 +33,7 @@ cc_library_shared {
     defaults: ["ntfs-3g_defaults"],
 
     srcs: ["libfuse-lite/*.c"],
+    recovery_available: true,
     export_include_dirs: ["include/fuse-lite"],
 }
 
@@ -75,11 +76,13 @@ cc_library_shared {
         "libntfs-3g/xattrs.c",
     ],
     export_include_dirs: ["include/ntfs-3g"],
+    recovery_available: true,
 }
 
 cc_binary {
     name: "fsck.ntfs",
     defaults: ["ntfs-3g_defaults"],
+    recovery_available: true,
 
     srcs: [
         "ntfsprogs/ntfsfix.c",
@@ -94,6 +97,7 @@ cc_binary {
 cc_binary {
     name: "mkfs.ntfs",
     defaults: ["ntfs-3g_defaults"],
+    recovery_available: true,
 
     srcs: [
         "ntfsprogs/attrdef.c",
@@ -111,6 +115,7 @@ cc_binary {
 cc_binary {
     name: "mount.ntfs",
     defaults: ["ntfs-3g_defaults"],
+    recovery_available: true,
 
     srcs: [
         "src/ntfs-3g.c",
